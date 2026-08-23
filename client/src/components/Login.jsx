@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API = "http://localhost:5000/api";
+const API = "https://riskshield-backend-8yjr.onrender.com/api";
 
 function Login({ onLogin, onSwitchToSignup }) {
   const [email, setEmail] = useState("");
