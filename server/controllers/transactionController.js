@@ -102,8 +102,9 @@ const createTransaction = async (req, res) => {
 
     // ================= ML SERVICE =================
 
+    // Deployed Python ML service on Render
     const mlResponse = await axios.post(
-      "http://127.0.0.1:5001/predict",
+      "https://riskshield-ml-service.onrender.com/predict",
       {
         amount: numericAmount,
         frequency: numericFrequency,
@@ -198,7 +199,7 @@ const createTransaction = async (req, res) => {
     ) {
       return res.status(503).json({
         message:
-          "AI Risk Engine is unavailable. Please start the Python ML service.",
+          "AI Risk Engine is unavailable. Please try again later.",
       });
     }
 
